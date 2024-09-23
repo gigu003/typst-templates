@@ -1,0 +1,57 @@
+---
+title: Lung Cancer
+execute: 
+  echo: false
+  message: false
+  warning: false
+format:
+  fact-typst: default
+---
+
+
+
+```{r}
+library(canregtools)
+library(ggcanreg)
+library(ggplot2)
+data <- load_example_data()
+```
+
+
+
+## Geographical distribution of cancer registry
+```{r}
+#| width: 12
+#| height: 12
+#| layout-ncol: 2
+areacodes <- show_registry(source = "new")
+areacodes <- areacodes[!areacodes=="410308"]
+gg_map(areacodes)+theme_void()
+gg_map(areacodes)+theme_void()
+```
+
+## Cancer site ranking
+```{r}
+#| height: 16
+#| width: 10
+#| layout-ncol: 2
+asr1 <- create_asr(data, cancer) |> drop_total() |> drop_others() |> 
+  add_labels(label_type = "abbr",lang="en")
+gg_barchart(asr1,site,asr_cn2000,highlight = "Lung",b_color = "steelblue")+theme(axis.title.y = element_blank())+theme_block()
+asr2 <- create_asr(data, cancer,event = sws) |> drop_total() |> drop_others() |> 
+  add_labels(label_type = "abbr",lang="en")
+gg_barchart(asr2,site,asr_wld85,highlight = "Lung",b_color = "red")+theme(axis.title.y = element_blank())+theme_block()
+```
+
+```{r}
+#| layout-ncol: 3
+library(dplyr)
+asr11 <- asr1 |> slice_max(cr, n=10) |> arrange(desc(cr)) |> 
+  mutate(site = factor(site, levels=site, labels = site))
+gg_pie(asr11, no_cases, site)+theme_void()
+asr22 <- asr2 |> slice_max(cr, n=10) |> arrange(desc(cr)) |> 
+  mutate(site = factor(site, levels=site, labels = site))
+gg_pie(asr22, no_cases, site)+theme_void()
+gg_pie(asr22, no_cases, site)+theme_void()
+```
+
