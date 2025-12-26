@@ -1,47 +1,62 @@
 ---
-title: |
-  河南省\
-  肿瘤登记质量控制报告
-subtitle: "第一季度"
+title: "2025肿瘤登记质控报告"
+subtitle: "Quality Control for 2022 Annual Cancer Report"
+registry: "河南省癌症中心"
+abstract: "本报告用于《2024河南省肿瘤登记年报》的质量审核，报告分为省市县三级
+          肿瘤登记数据质量审核报告，用于不同级别登记处向下质控和管理。"
 date: today
-lang: "ZH-CN"
-registry: "河南省肿瘤登记处"
-header: "质控报告"
-footer: "https://www.chenq.site"
-section-numbering: "1."
-authors:
-  - name: 陈 琼
-    email: chenq08@126.com
-    affiliation: "河南省肿瘤医院"
+lang: ZH
+footer: ""
+header: "Powered by canregtools"
 format:
   qcreport-typst:
     toc: true
-    mainfont: "Songti TC"
-    fontsize: 12pt
+    toc-figure: true
 ---
 
 ## 人口情况
+### 历年人口变化情况
+林州市肿瘤登记处覆盖人口总数为 1,117,633，其中男性人口数为 578,590，占全部人
+口数的 51.77%；女性人口数为 539,043，占全部人口数的 48.23%，男女人口数性别比为
+107.34% 。(图 2)。
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+## 数据质量情况
+表 1 显示了 2022 年林州市肿瘤登记处质量控制指标情况，死亡发病比(M:I)为 0.69, 病
+理学诊断比例(MV)为 80.69%，只有死亡医学证明书的病例所占比例(DCO)为 0.83%，发
+病亚部位不详的病例所占比例为 53.51%。
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+死亡发病比(M:I)是反映肿瘤患者预后的指标， M:I 越小预后越好，反之，则越差，(1-
+M:I)可以近似估计 5 年生存率。从不同癌症发病部位来看，M:I 最高的癌症部位为食管，
+肝脏和胆囊，其值分别为 0.9，0.88 和 0.87；M:I 最低的癌症部位为喉，甲状腺和皮肤黑色素瘤，其值分别为 0.07，0.02 和 0。
 
-## 发病情况
+病理诊断比例(MV%)是评价数据有效性的重要指标，其值越高数据有效行越高，反
+之，则有效性越低；但是 MV% 过高也可反映数据存在完整性不足的问题。 MV% 最高的
+癌症部位为鼻咽，皮肤黑色素瘤和睾丸，其值分别为 100%，100% 和 100%； MV% 最低
+的癌症部位为肝脏，脑和骨，其值分别为 24.06%，17.92% 和 7.41%。
 
-## 死亡情况
+亚部位不明比例(SUB%)是评价数据有效性的指标之一， SUB% 最高的癌症部位为鼻
+咽，子宫颈和睾丸，其值分别为 100%，100% 和 100%； SUB% 最低的癌症部位为卵巢，
+前列腺和肾，其值分别为 0%，0% 和 0%。
 
-You can learn more about creating custom Typst templates here: 
+#### 不同年份的历史情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
 
-<https://quarto.org/docs/prerelease/1.4/typst.html#custom-formats>
+#### 年龄别率
+建峰的卡拉胶打卡机啊李金龙的金龙豆浆啊李靖大李靖德林卡金龙豆浆
+截断卡里的卡金龙发金龙大舅辣的金龙咖啡建峰
 
-### fjkdajlkfdj
-kjladjslakjfldajlfdjsa
+{{<pagebreak>}}
 
+## 其他情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
+什么情况什么情况什么情况什么情况
 
 

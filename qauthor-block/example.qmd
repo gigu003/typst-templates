@@ -1,0 +1,39 @@
+---
+title: "A test title"
+lang: zh
+authors:
+  - name: 张三
+    affiliations:
+      - ref: cdyjy
+    corresponding: true
+    email: john.doe@jdct.edu
+  - name: 李四
+    affiliations:
+      - ref: cdyjy
+  - name: 王二麻子
+    affiliations:
+      - ref: cdyjy
+    orcid: 0000-3333-2222-1111
+  - name: 赵五
+    affiliations:
+      - ref: cdyjy
+      - ref: iot
+    corresponding: true
+    email: cccl.chen@jdct.edu
+    orcid: 0000-2222-1111-3333
+
+affiliations:
+  - id: cdyjy
+    name: 郑州大学附属肿瘤医院(河南省肿瘤医院), 中国, 郑州, 450008
+  - id: iot
+    name: 无奈肿瘤医院
+filters:
+  - qauthor-block
+format: 
+  docx: default
+---
+
+## Heading
+
+This filter adds formatting to heading text.
+

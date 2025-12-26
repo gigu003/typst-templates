@@ -12,9 +12,30 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
-#show: doc => factsheet(
+#show: doc => fact(
 $if(title)$
   title: [$title$],
 $endif$
-  doc,
+$if(registry)$
+  registry: [$registry$],
+$endif$
+$if(report)$
+  report: [$report$],
+$endif$
+$if(year)$
+  year: [$year$],
+$endif$
+$if(width)$
+  width: $width$,
+$endif$
+$if(height)$
+  height: $height$,
+$endif$
+$if(header-color)$
+  header-color: $header-color$,
+$endif$
+$if(mainfont)$
+  mainfont: ("$mainfont$",),
+$endif$
+  doc
 )

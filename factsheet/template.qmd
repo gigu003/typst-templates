@@ -1,57 +1,86 @@
 ---
-title: Lung Cancer
+title: "淋巴瘤(C33-34)"
+registry: "2022河南省"
+report: "肿瘤登记年报"
+year: 2022
 execute: 
   echo: false
   message: false
   warning: false
+mainfont: "Lantinghei SC"
 format:
-  fact-typst: default
+  fact-typst:
+    height: 524.3mm
+    width: 370.5mm
+    header-color: rgb(159,70,60)
 ---
-
-
 
 ```{r}
 library(canregtools)
+library(manuscript)
 library(ggcanreg)
 library(ggplot2)
-data <- load_example_data()
-```
-
-
-
-## Geographical distribution of cancer registry
-```{r}
-#| width: 12
-#| height: 12
-#| layout-ncol: 2
-areacodes <- show_registry(source = "new")
-areacodes <- areacodes[!areacodes=="410308"]
-gg_map(areacodes)+theme_void()
-gg_map(areacodes)+theme_void()
-```
-
-## Cancer site ranking
-```{r}
-#| height: 16
-#| width: 10
-#| layout-ncol: 2
-asr1 <- create_asr(data, cancer) |> drop_total() |> drop_others() |> 
-  add_labels(label_type = "abbr",lang="en")
-gg_barchart(asr1,site,asr_cn2000,highlight = "Lung",b_color = "steelblue")+theme(axis.title.y = element_blank())+theme_block()
-asr2 <- create_asr(data, cancer,event = sws) |> drop_total() |> drop_others() |> 
-  add_labels(label_type = "abbr",lang="en")
-gg_barchart(asr2,site,asr_wld85,highlight = "Lung",b_color = "red")+theme(axis.title.y = element_blank())+theme_block()
-```
-
-```{r}
-#| layout-ncol: 3
 library(dplyr)
-asr11 <- asr1 |> slice_max(cr, n=10) |> arrange(desc(cr)) |> 
-  mutate(site = factor(site, levels=site, labels = site))
-gg_pie(asr11, no_cases, site)+theme_void()
-asr22 <- asr2 |> slice_max(cr, n=10) |> arrange(desc(cr)) |> 
-  mutate(site = factor(site, levels=site, labels = site))
-gg_pie(asr22, no_cases, site)+theme_void()
-gg_pie(asr22, no_cases, site)+theme_void()
+cancer_code <- "103"
+cancer_des <- tidy_var(cancer_code, var_name = "cancer", label_type = "abbr", lang = "cn")
 ```
 
+```{r}
+asr_inci <- create_asr(canregs[[1]], sex, cancer)
+asr_mort <- create_asr(canregs[[1]],sex, cancer, event = "sws")
+```
+
+
+```{r}
+#| output: asis
+#| layout-ncol: 2
+asr1 <- asr_inci |>
+  cr_filter(cancer == cancer_code, sex == 0)
+asr2 <- asr_mort |>
+  cr_filter(cancer == cancer_code, sex == 0)
+cr_summary_block(asr1, fill = "blue")
+cr_summary_block(asr2, type = "mortality")
+```
+
+
+
+### 恶性肿瘤顺位
+
+```{r}
+#| output: asis
+#| layout-ncol: 2
+
+cr_bar_text(text = "发病率", border_color = "blue", inset_y = "0.1em",
+            border_size="0.2em",text_size = "25pt", margin = "1em")
+cr_bar_text(text = "死亡率", border_color = "red", inset_y = "0.1em",
+            border_size="0.2em",text_size = "25pt", margin = "1em")
+```
+
+
+
+```{r}
+#| fig-height: 2
+#| layout-ncol: 1
+dat <- asr_inci |>
+  mutate(type = "发病率") |> 
+  bind_rows(asr_mort |> 
+              mutate(type = "死亡率")
+            ) |> 
+  cr_filter(sex == 0, drop = c("others", "total")) |> 
+  add_labels(label_type = "abbr")
+
+gg_barchart(dat, x = cancer_cn, y = cr, facet = type, ncol = 2, highlight = cancer_des)+
+  theme_block()+
+  #scale_x_continuous(position = "bottom") +
+  theme(
+    text = element_text(family="STSong", size = 6),
+    legend.position = "none",
+    axis.text.y = element_text(size = 4),
+    axis.text.x = element_text(size = 4),
+    strip.text = element_blank(),
+    plot.title = element_text(hjust = 0, color = "gray40"),
+    plot.margin = margin(0, 0, 0, 0, unit = "pt"))
+
+```
+
+{{<pagebreak>}}

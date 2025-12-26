@@ -15,7 +15,8 @@
 #show: doc => report(
 $if(title)$ title: [$title$], $endif$
 $if(subtitle)$ subtitle: [$subtitle$], $endif$
-$if(institution-logo)$ univ_logo: "$institution-logo$", $endif$
+$if(cover-note)$ cover-note: "$cover-note$", $endif$
+$if(logo)$ logo: "$logo$", $endif$
 $if(registry)$ registry: [$registry$], $endif$
 $if(header)$ header: [$header$], $endif$
 $if(footer)$ footer: [$footer$], $endif$
@@ -43,7 +44,10 @@ $if(papersize)$
   paper: "$papersize$",
 $endif$
 $if(mainfont)$
-  font: ("$mainfont$",),
+  mainfont: ("$mainfont$",),
+$endif$
+$if(coverfont)$
+  coverfont: ("$coverfont$",),
 $endif$
 $if(fontsize)$
   fontsize: $fontsize$,
@@ -53,6 +57,9 @@ $if(section-numbering)$
 $endif$
 $if(toc)$
   toc: $toc$,
+$endif$
+$if(toc-figure)$
+  toc-figure: $toc-figure$,
 $endif$
   cols: $if(columns)$$columns$$else$1$endif$,
   doc,

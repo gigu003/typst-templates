@@ -10,72 +10,95 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
-
-#let factsheet(
+#let fact(
   title: none,
-  doc,
+  width: 1050pt,
+  height: 1500pt,
+  logo: "./_extensions/fact/logo.png",
+  mainfont: "Times New Roman",
+  registry: "",
+  report: "",
+  year: 2021,
+  header-color: rgb("#f08a5d"),
+  doc
 ) = {
+//let header-color  = rgb("#f08a5d")
+set text(fill: luma(255), size: 30pt, font: mainfont)
 
-let head_color = rgb(159, 70, 49)
-
-let footer_text(term) = {
-  set text(fill: luma(255), size: 15pt)
-  text[#term]
-}
-
-let header_text(term, size:20pt) = {
-  set text(fill: luma(255), size: size)
-  text[#term]
-}
-
-let bg_header_footer = context{
-    for i in (1, 2) {
-      if i == 1 {
-        place(top, rect(
-          fill: head_color,
+let bg-page = context{
+  place(top,
+      rect(
+          fill: header-color,
           width: 100%,
-          height: 200pt,
+          height: 150pt,
         ))
-      } else if i == 2 {
-        place(bottom, rect(fill: head_color,
+  place(bottom,
+      rect(
+          fill: header-color,
           width: 100%,
           height: 60pt
         ))
-      }
-    }
   }
-  
-let fact_header={
-  table(
-    columns: (2fr, 4fr, 2fr), align: horizon + center, stroke: none,
-    rows: (30%, 50%, 20%),
-    table.cell(rowspan: 2, align: center,inset: 10pt,)[
-    #image("./_extensions/fact/logo1977.gif", height: 90%)], 
-    table.cell(rowspan: 2)[#header_text(size:60pt)[#title]], [],[],
-    table.cell(align: center)[#header_text[Henan Cancer Hospital]],[],
-    table.cell(align: right+bottom)[#header_text[Cancer Fact Sheet]],
-  )
+
+let fact-header = {
+grid(
+  columns: (3fr, 1fr),
+  place(horizon + left, image(logo, height: 80%)),
+  align(right,
+      block[#text(font: mainfont, size: 25pt, tracking: 3pt)[#registry]
+            #linebreak()
+            #text(font: mainfont, size: 25pt, tracking: 3pt)[#report]]
+            )
+)
 }
 
-let fact_footer = {
+
+let fact-footer = {
+  set text(size: 15pt)
   grid(
     columns: (2fr, 1fr, 2fr),
     align: center + horizon,
-    footer_text[The Henan Province Cancer Registration Report (2023)],
-    counter(page).display("1/1",both: true,),
-    align(right)[#footer_text[Made by Qiong Chen,  All Rights Reserved.]],
+    text[Cancer Registry Report (#year)],
+    context(
+      counter(page).display()
+    ),
+    align(right)[#text[Powered by canregtools | All Rights Reserved.]],
 )
+
 }
 
 set page(
-  width: 1050pt,
-  height: 1486pt,
-  fill: luma(250),
-  margin: (top: 250pt, right: 50pt, bottom: 50pt, left: 50pt), 
-  background: bg_header_footer,
-  header: fact_header,
-  footer: fact_footer,
+  width: width,
+  height: height,
+  fill: luma(255),
+  margin: (top: 150pt, right: 20pt, bottom: 60pt, left: 20pt),
+  background: bg-page,
+  header: fact-header,
+  footer: fact-footer
 )
+
+show heading: it => {
+  set par(first-line-indent: 0em)
+  set text(tracking: 2pt, fill: header-color)
+  box[#if it.numbering != none {
+         counter(heading).display()
+      }
+      #h(0.3em)
+      #it.body
+     ]
+}
+
+place(top + center,
+block(fill: header-color, width: width, height: 70pt,
+grid(
+columns: (3fr, 1fr),
+place(top + left, text(font: mainfont, size: 45pt, tracking: 5pt)[#h(0.5em)#title]),
+place(top + right, text(font: mainfont, size: 45pt)[#year#h(0.5em)])
+)
+)
+)
+
+v(100pt)
 
 doc
 

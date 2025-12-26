@@ -6,7 +6,7 @@ contributes:
   formats:
     typst:
       format-resources:
-        - logo1977.gif
+        - logo.png
       template-partials:
         - typst-template.typ
         - typst-show.typ

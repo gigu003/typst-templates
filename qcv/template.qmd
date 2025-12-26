@@ -1,0 +1,106 @@
+---
+title: "Curriculum Vitae"
+author:
+  firstname: "Qiong"
+  lastname: "Chen"
+  affiliation: "Henan Cancer Center, Affiliated Cancer Hospital of Zhengzhou University (Henan Cancer Hospital)"
+  department: "Department of Cancer Epidemiology"
+  city: "Zhengzhou"
+  country: "China"
+  position: Associate Chief Physician
+contacts:
+  email: chenq08@126.com
+  website: www.chenq.site
+  orcid: 0000-0003-2401-0046
+  github: gigu003
+date: 2025-12-25
+format:
+  qcv-typst: default
+---
+
+## Summary
+
+
+## 🎓 Education
+
+```{=typst}
+#align_left_right("PhD Degree in Epidemiology","School of Public Health, Shanxi Medical University, China", "2015 - 2018")
+
+#align_left_right("Master Degree in Epidemiology","School of Public Health, Lanzhou University, China", "2008 - 2011")
+
+#align_left_right("Bechalor Degree in Preventive Medicine","School of Public Health, Lanzhou University, China", "2003 - 2008")
+```
+
+## 👨‍💻 Work experience
+```{=typst}
+#align_left_right("Associate Chief Physician (Cancer Epidemiology)","Henan Cancer Center / Affiliated Cancer Hospital of Zhengzhou University (Henan Cancer Hospital)", "2021 - Now")
+```
+Key responsibilities:
+
+- Maintenance of the data collection information system and database for Population-Based Cancer Registration(PBCR) in Henan Province.
+- Develop the annual PBCR implementation plan; provide technical support for data analysis, visualization, and reporting; deliver professional training to PBCR personnel in Henan Province; and conduct quality control of lower-level cancer registries.
+- Conduct descriptive epidemiological research and evaluation of cancer screening effectiveness.
+- Publish and deliver the Henan Provincial Cancer Registry Annual Report.
+
+
+```{=typst}
+#align_left_right("Attending Physician (Cancer Epidemiology)", "Henan Cancer Center / Henan Cancer Hospital", "2014 - 2021")
+```
+
+```{=typst}
+#align_left_right("Visiting Scholar (Cancer Epidemiology)", "School of Public Health, Yale University", "2012 - 2013")
+```
+
+```{=typst}
+#align_left_right("Physician (Epidemiology)", "Henan Cancer Hospital", "2011 - 2014")
+```
+
+## Society memberships
+
+- Member of the Medical Institution Public Health Management Branch, Chinese Preventive Medicine Association
+- Young Member, Cancer Screening and Early Detection & Treatment Committee, Chinese Anti-Cancer Association
+- Member, Esophageal Cancer Integrated Prevention and Screening Committee, Chinese Anti-Cancer Association
+- Standing Committee Member, Cancer Prevention and Control Professional Committee, Henan Preventive Medicine Association
+- Member, Young Editorial Board, Chinese Journal of Cancer Prevention and Control
+
+## Publications
+### 📕 Books
+
+```{=typst}
+#align_left_right("Henan Cancer Registry Annual Reports (2018–2024)", "Role: Oversaw data verification and quality control, conducted statistical analysis and visualization, drafted reports, and managed publication with the press.", "2018 - 2024")
+```
+
+1. Wengang Yi, Shaokai Zhang, Linqi Diao, Gaofeng Ma, Yanyan Liu, **Qiong Chen**, Shuzheng Liu, Yin Liu. Henan Cancer Report, 2024[M]. Zhengzhou: Henan Science and Technology Press, 2024.
+1. Wengang Yi, Shaokai Zhang, Linqi Diao, Gaofeng Ma, Hongying Shi, **Qiong Chen**, Shuzheng Liu, Yin Liu. Henan Cancer Report, 2023[M]. Zhengzhou: Henan Science and Technology Press, 2023.
+1. Jiangong Zhang, Shaokai Zhang, Wanshen Guo, Yibin Hao, Linqi Diao, Hongying Shi, **Qiong Chen**, Shuzheng Liu. Henan Cancer Report, 2022[M]. Zhengzhou: Henan Science and Technology Press, 2022.
+1. Jiangong Zhang, Shaokai Zhang, Wanshen Guo, Yibin Hao, Linqi Diao, Suxia Luo, **Qiong Chen**, Shuzheng Liu. Henan Cancer Report, 2021[M]. Zhengzhou: Henan Science and Technology Press, 2021.
+1. Jiangong Zhang, Shaokai Zhang, Linqi Diao, Wanshen Guo, Suxia Luo, **Qiong Chen**, Shuzheng Liu. Henan Cancer Report, 2020[M]. Zhengzhou: Henan Science and Technology Press, 2020.
+
+### Research Articles
+
+```{=typst}
+#bibliography("refs.bib", full: true, title: none, style: "apa2.csl")
+```
+
+## Software
+### R packages
+
+```{=typst}
+#align_left_right("Population Based Cancer Registration (PBCR)", "Several R packages were developed for PBCR, including canregtools (routine statistical analysis), ltRISK (lifetime cancer risk estimation), crcheck (internal consistency checks), and crformats (report formatting).", "2023 - Now")
+```
+
+1.  Chen Q (2025). _ltRISK: Estimate the Lifetime Risk of Developing or Dying from Cancer_. R package version 0.1.0, <https://github.com/gigu003/ltRISK>.
+1. Chen Q (2025). _crformats: Using Quarto Extensions Designed for Cancer Registry Reports_. R package version 0.1.0, https://github.com/gigu003/crformats.
+1. Chen Q (2024). _crcheck: Checking the Validity and Internal Consistency_. R package version 0.0.1, <https://github.com/gigu003/crcheck>.
+1. Chen Q (2023). _canregtools: Analyzing Population-Based Cancer Registry Data_. R package version 0.2.10, <https://github.com/gigu003/canregtools>.
+
+```{=typst}
+#align_left_right("Report writing", "Packages developed to assit report writing, including ggcanreg (data visualization), manuscript (assist report writing).", "2025 - Now")
+```
+
+1. Chen Q (2025). _manuscript: Tools to Assist Statistical Report
+  Writing_. R package version 0.0.0.9000, <https://github.com/gigu003/manuscript>.
+1. Chen Q (2025). _ggcanreg: Visualization Tools for Cancer Registry
+  Data_. R package version 0.0.0.9000, <https://gitub.com/gigu003/ggcanreg>.
+
+### Quarto extensions

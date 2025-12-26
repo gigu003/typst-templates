@@ -1,0 +1,35 @@
+---
+subject: "关于反馈2022年度肿瘤登记数据质量及督导结果的函"
+sender: "河南省肿瘤防治研究办公室"
+recipient: "罗山县疾病预防控制中心"
+date: today
+date-format: "YYYY年M月D日"
+lang: zh
+mainfont: "STsong"
+execute: 
+  echo: false
+format:
+  letter-typst:
+    papersize: "a4"
+---
+
+为进一步提升我省肿瘤登记数据质量，确保顺利完成向国家癌症中心报送2022年肿瘤登记数据的任务，现需对各肿瘤登记处上报的数据开展质量控制工作。
+
+河南省癌症中心依据《河南省肿瘤登记网络直报信息管理系统》的最新上报数据，编制了《登记处质量控制报告》和《登记处肿瘤登记报告》。请各登记处对照报告中反馈的质量控制指标，认真核查本单位登记数据，查漏补缺，及时更新和补充存在问题的病例记录，以确保数据真实、完整、准确。
+
+{{<pagebreak>}}
+
+
+```{r}
+#| output: asis
+#| layout-ncol: 4
+library(manuscript)
+cr_rect_text(text = "标准化定义", height = "4em")
+cr_rect_text(text = "标准化操作", height = "4em")
+cr_rect_text(text = "数据质量评估", height = "4em")
+cr_rect_text(text = "数据共享和发布", height = "4em")
+```
+
+
+
+
