@@ -9,6 +9,9 @@
 // documentation on creating typst templates and some examples here: 
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
+#import "@preview/alexandria:0.2.2": *
+#show: alexandria(prefix: "x:", read: path => read(path))
+#show: alexandria(prefix: "y:", read: path => read(path))
 #let accent = rgb(0, 45, 120)
 #let box-bg = rgb(235, 235, 235)
 #let align_left_right(title, left_body, right_body) = {
@@ -96,19 +99,19 @@ let create-logo-text(
   type: "email",
   fontsize: 10pt,
   leading: 4pt,
-  hanging-indent: 1.1em,
+  hanging-indent: 1.3em,
 ) = {
 // Construct the logo according type of description
 let logo = if type == "email" {
-  emoji.postbox
+  box(baseline: 20%, image("_extensions/qcv/icons/email.svg", height: 1em))
 } else if type == "website" {
-  "🌐"
+  box(baseline: 20%, image("_extensions/qcv/icons/website.svg", height: 1em))
 } else if type == "orcid" {
-  "🏥"  
+  box(baseline: 20%, image("_extensions/qcv/icons/orcid.svg", height: 1em))
 } else if type == "affiliation" {
-  emoji.hospital
+  box(baseline: 20%, image("_extensions/qcv/icons/affiliation.svg", height: 1em))
 } else if type == "github" {
-  "🐙"  
+  box(baseline: 20%, image("_extensions/qcv/icons/github.svg", height: 1em))
 }
 
 // Construct the website url of the description
@@ -191,13 +194,13 @@ show heading: it => {
     )[#it.body]
   } else {
     par(
+      leading: 0.8em,
       text(
         size: 1.05em,
         weight: "bold",
         fill: accent,
       )[#it.body]
     )
-    v(0.2em)
   }
 }
 

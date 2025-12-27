@@ -78,8 +78,10 @@ Key responsibilities:
 
 ### Research Articles
 
+#### First author articles
+
 ```{=typst}
-#bibliography("refs.bib", full: true, title: none, style: "apa2.csl")
+#bibliographyx(("refs.bib"), full: true, title: none, style: "apa.csl", prefix: "x:")
 ```
 
 ## Software
@@ -103,4 +105,3 @@ Key responsibilities:
 1. Chen Q (2025). _ggcanreg: Visualization Tools for Cancer Registry
   Data_. R package version 0.0.0.9000, <https://gitub.com/gigu003/ggcanreg>.
 
-### Quarto extensions
