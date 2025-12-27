@@ -103,15 +103,15 @@ let create-logo-text(
 ) = {
 // Construct the logo according type of description
 let logo = if type == "email" {
-  box(baseline: 20%, image("_extensions/qcv/icons/email.svg", height: 1em))
+  box(baseline: 20%, image("_assets/icons/email.svg", height: 1em))
 } else if type == "website" {
-  box(baseline: 20%, image("_extensions/qcv/icons/website.svg", height: 1em))
+  box(baseline: 20%, image("_assets/icons/website.svg", height: 1em))
 } else if type == "orcid" {
-  box(baseline: 20%, image("_extensions/qcv/icons/orcid.svg", height: 1em))
+  box(baseline: 20%, image("_assets/icons/orcid.svg", height: 1em))
 } else if type == "affiliation" {
-  box(baseline: 20%, image("_extensions/qcv/icons/affiliation.svg", height: 1em))
+  box(baseline: 20%, image("_assets/icons/affiliation.svg", height: 1em))
 } else if type == "github" {
-  box(baseline: 20%, image("_extensions/qcv/icons/github.svg", height: 1em))
+  box(baseline: 20%, image("_assets/icons/github.svg", height: 1em))
 }
 
 // Construct the website url of the description
